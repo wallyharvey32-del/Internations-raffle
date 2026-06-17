@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raffle Admin Control Center</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-dark bg-dark mb-4">
+        <div class="container">
+            <span class="navbar-brand mb-0 h1">🏆 Internations Control Center</span>
+            <a href="index.html" class="btn btn-outline-light btn-sm">Go to Public Form</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row g-3 mb-4">
+            <div class="col-md-4">
+                <div class="card bg-white border-0 shadow-sm rounded-3 text-center p-3">
+                    <h6 class="text-muted text-uppercase small font-weight-bold">Total Revenue</h6>
+                    <h2 class="text-success fw-bold mb-0" id="statRevenue">$0.00</h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-white border-0 shadow-sm rounded-3 text-center p-3">
+                    <h6 class="text-muted text-uppercase small font-weight-bold">Tickets Sold</h6>
+                    <h2 class="text-primary fw-bold mb-0" id="statTicketsSold">0 / 4,000</h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-white border-0 shadow-sm rounded-3 text-center p-3">
+                    <h6 class="text-muted text-uppercase small font-weight-bold">Remaining Pool</h6>
+                    <h2 class="text-warning fw-bold mb-0" id="statTicketsLeft">4,000</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="card border-0 shadow-sm rounded-3 mb-4">
+                    <div class="card-header bg-danger text-white fw-bold text-center py-3">
+                        🚨 Grand Prize Draw Engine
+                    </div>
+                    <div class="card-body text-center p-4">
+                        <p class="text-muted small">Clicking this button closes the pool and instantly executes the randomized selection algorithm.</p>
+                        <button id="btnDraw" class="btn btn-danger w-100 py-3 fw-bold fs-5 shadow-sm text-uppercase">
+                            Draw Golden Ticket
+                        </button>
+
+                        <!-- Winner Banner Display Container -->
+                   <div id="winnerDisplay" class="mt-4 p-3 bg-warning bg-opacity-10 border border-warning rounded d-none">
+    
+                        <div id="winnerSpotlight" class="text-center p-3 mb-3 bg-white rounded border border-danger shadow">
+                            <span class="badge bg-danger px-3 py-2 fs-6 animate-pulse">LATEST WINNER DRAWN</span>
+                            <h1 class="display-2 fw-bold text-danger my-2" id="spotlightTicket">#0000</h1>
+                            <h4 class="fw-bold text-dark mb-1" id="spotlightName">Wally</h4>
+                            <p class="text-muted mb-0" id="spotlightContact">Phone: N/A | Email: N/A</p>
+                        </div>
+
+                        <div id="winnerHistoryList" style="max-height: 250px; overflow-y: auto;">
+                            </div>
+                    </div>
+                        <!-- JavaScript will dynamically slide rows in here on every click -->
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-8">
+                <div class="card border-0 shadow-sm rounded-3">
+                    <div class="card-header bg-dark text-white fw-semibold py-3">
+                        📋 Master Transaction History Ledger
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th class="ps-3">Buyer Name</th>
+                                        <th>Contact Details</th>
+                                        <th class="text-center">Tickets</th>
+                                        <th class="text-end pe-3">Revenue</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="ledgerBody">
+                                    <tr>
+                                        <td colspan="4" class="text-center py-4 text-muted">Loading live ledger data streams...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
