@@ -20,9 +20,8 @@ const app = express();
 app.use(cors());          
 app.use(express.json());  
 
-// Serve static assets from both the root and the public folder
-app.use(express.static('.'));
-app.use('/public', express.static('public'));
+// Serve everything inside the public folder as the root website
+app.use(express.static('public'));
 
 // Connect to MongoDB
 connectDB();
